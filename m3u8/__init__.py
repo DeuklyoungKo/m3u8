@@ -30,10 +30,17 @@ def loads(content, uri=None, custom_tags_parser=None):
     Raises ValueError if invalid content
     '''
 
+    print("content")
+    print(content)
+
     if uri is None:
         return M3U8(content, custom_tags_parser=custom_tags_parser)
     else:
         base_uri = _parsed_url(uri)
+
+        print("loads")
+        print(base_uri)
+
         return M3U8(content, base_uri=base_uri, custom_tags_parser=custom_tags_parser)
 
 

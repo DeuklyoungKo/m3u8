@@ -7,6 +7,8 @@ import os
 import errno
 import math
 
+from cv2 import log
+
 from m3u8.protocol import ext_x_start, ext_x_key, ext_x_session_key, ext_x_map
 from m3u8.parser import parse, format_date_time
 from m3u8.mixins import BasePathMixin, GroupedBasePathMixin
@@ -143,6 +145,7 @@ class M3U8(object):
     )
 
     def __init__(self, content=None, base_path=None, base_uri=None, strict=False, custom_tags_parser=None):
+        print("m3u8 model __init__")
         if content is not None:
             self.data = parse(content, strict, custom_tags_parser)
         else:
@@ -352,6 +355,7 @@ class M3U8(object):
         return '\n'.join(output)
 
     def dump(self, filename):
+        print("dump =================================")
         '''
         Saves the current m3u8 to ``filename``
         '''

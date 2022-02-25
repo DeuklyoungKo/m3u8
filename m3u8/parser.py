@@ -39,6 +39,11 @@ def parse(content, strict=False, custom_tags_parser=None):
     '''
     Given a M3U8 playlist content returns a dictionary with all data found
     '''
+
+
+    print("parse ===========================")
+    print(content)
+
     data = {
         'media_sequence': 0,
         'is_variant': False,
